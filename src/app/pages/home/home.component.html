@@ -1,0 +1,42 @@
+<div class="funcionario-box">
+    <button>Registar novo funcionário</button>
+    <div class="input-box">
+        <label>Procurar</label>
+        <input type="text" placeholder="Procurar funcionário" (input)="search($event)">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Nome</th>
+            <th>Apelido</th>
+            <th>Departamento</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let funcionario of funcionarios">
+        <tr>
+            <td>
+                <div *ngIf="funcionario.ativo == true; else inativo">
+                    <img src="assets/images/ativo.jpg" alt="" style="height: 20px; width: 20px">
+                </div>
+                <ng-template #inativo>
+                    <img src="assets/images/inativo.jpg" alt="" style="height: 20px; width: 20px">
+                </ng-template>
+            </td>
+            <td>{{ funcionario.nome }}</td>
+            <td>{{ funcionario.apelido }}</td>
+            <td>{{ funcionario.departamento }}</td>
+            <td>
+                <button>Detalhes</button>
+                <button>Editar</button>
+            </td>
+            <td>
+                <button>Remover</button>
+            </td>
+        </tr>
+    </tbody>
+</table>        
