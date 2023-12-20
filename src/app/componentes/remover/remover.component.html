@@ -1,0 +1,18 @@
+<mat-card>
+    <div *ngIf="funcionario">
+        <h1 style="text-align: center;">Deseja remover este funcionário?</h1>
+        <div>
+            <h2>Funcionário:</h2>
+            <p>{{ funcionario.nome }}</p>
+
+            <h2>Departamento:</h2>
+            <p>{{ funcionario.departamento }}</p>
+        </div>
+
+        <div>
+            <button (click)="Remover()" mat-raised-button color="warn">Remover</button>
+            <button (click)="Cancelar()" mat-raised-button>Voltar</button>
+        </div>
+
+    </div>
+</mat-card>

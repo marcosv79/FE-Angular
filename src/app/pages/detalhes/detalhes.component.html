@@ -1,47 +1,64 @@
-<div>
-    <h1>Detalhes Funcionário</h1>
-</div>
+<mat-card>
+    <div>
+        <h1>Detalhes Funcionário</h1>
+    </div>
 
-<div *ngIf="funcionario">
-    <form>
-        <div class="input-box">
-            <label>Nome</label>
-            <input type="text" value="{{ funcionario.nome }}" disabled>
-        </div>
+    <div *ngIf="funcionario">
+        <form>
 
-        <div class="input-box">
-            <label>Apelido</label>
-            <input type="text" value="{{ funcionario.apelido }}" disabled>
-        </div>
+            <div class="input_box">
+                <mat-form-field>
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" value="{{ funcionario.nome }}" disabled>
+                </mat-form-field>
+            </div>
 
-        <div class="input-box">
-            <label>Departamento</label>
-            <input type="text" value="{{ funcionario.departamento }}" disabled>
-        </div>
+            <div class="input_box">
+                <mat-form-field>
+                    <mat-label>Apelido</mat-label>
+                    <input matInput type="text" value="{{ funcionario.apelido }}" disabled>
+                </mat-form-field>
+            </div>
 
-        <div class="input-box">
-            <label>Turno</label>
-            <input type="text" value="{{ funcionario.turno }}" disabled>
-        </div>
+            <div class="input_box">
+                <mat-form-field>
+                <mat-label>Departamento</mat-label>
+                <input matInput type="text" value="{{ funcionario.departamento }}" disabled>
+            </mat-form-field>
+            </div>
 
-        <div class="input-box">
-            <label>Situação</label>
-            <input type="text" value="{{ funcionario.ativo == true ? 'Ativo' : 'Inativo' }}" disabled>
-        </div>
+            <div class="input_box">
+                <mat-form-field>
+                    <mat-label>Turno</mat-label>
+                    <input matInput type="text" value="{{ funcionario.turno }}" disabled>
+                </mat-form-field>
+            </div>
 
-        <div class="input-box">
-            <label>Data de criação</label>
-            <input type="text" value="{{ funcionario.dataCriacao }}" disabled>
-        </div>
+            <div class="input_box">
+                <mat-form-field>
+                    <mat-label>Situação</mat-label>
+                    <input matInput type="text" value="{{ funcionario.ativo == true ? 'Ativo' : 'Inativo' }}" disabled>
+                </mat-form-field>
+            </div>
 
-        <div class="input-box">
-            <label>Data de alteração</label>
-            <input type="text" value="{{ funcionario.dataAlteracao }}" disabled>
-        </div>
+            <div class="input_box">
+                <mat-form-field>
+                    <mat-label>Data de criação</mat-label>
+                    <input matInput type="text" value="{{ funcionario.dataCriacao }}" disabled>
+                </mat-form-field>
+            </div>
 
-        <div class="btn-box">
-            <button (click)="InativaFuncionario()">Inativar utilizador</button>
-            <button routerLink=''>Voltar</button>
-        </div>
-    </form>
-</div>
+            <div class="input_box">
+                <mat-form-field>
+                    <mat-label>Data de alteração</mat-label>
+                    <input matInput type="text" value="{{ funcionario.dataAlteracao }}" disabled>
+                </mat-form-field>
+            </div>
+
+            <div class="btn-box">
+                <button (click)="InativaFuncionario()" mat-raised-button color="warn">Inativar utilizador</button>
+                <button routerLink='' mat-raised-button>Voltar</button>
+            </div>
+        </form>
+    </div>
+</mat-card>

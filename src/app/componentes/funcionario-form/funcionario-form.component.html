@@ -1,42 +1,51 @@
-<h1>{{ btnTitulo }}</h1>
+<mat-card>
+    <h1>{{ btnTitulo }}</h1>
 
-<form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit = "ngForm">
-    
-    <input type="hidden" formControlName="id">
+    <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit = "ngForm">
+        
+        <input type="hidden" formControlName="id">
 
-    <div class="input_box">
-        <label for="">Nome</label>
-        <input type="text" formControlName="nome" placeholder="Insira o nome" required>
-    </div>
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Nome</mat-label>
+                <input matInput type="text" formControlName="nome" placeholder="Insira o nome" required>
+            </mat-form-field>
+        </div>
 
-    <div class="input_box">
-        <label for="">Apelido</label>
-        <input type="text" formControlName="apelido" placeholder="Insira o apelido" required>
-    </div>
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Apelido</mat-label>
+                <input matInput type="text" formControlName="apelido" placeholder="Insira o apelido" required>
+            </mat-form-field>
+        </div>
 
-    <div class="input_box">
-        <label for="">Departamento</label>
-        <select id="departamento" formControlName="departamento" required>
-            <option value="RH">RH</option>
-            <option value="IT">IT</option>
-            <option value="Comercial">Comercial</option>
-            <option value="Design">Design</option>
-            <option value="Acessórios">Acessórios</option>
-        </select>
-    </div>
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Departamento</mat-label>
+                <mat-select id="departamento" formControlName="departamento" required>
+                    <mat-option value="RH">RH</mat-option>
+                    <mat-option value="IT">IT</mat-option>
+                    <mat-option value="Comercial">Comercial</mat-option>
+                    <mat-option value="Design">Design</mat-option>
+                    <mat-option value="Acessórios">Acessórios</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-    <div class="input_box">
-        <label for="">Turno</label>
-        <select id="turno" formControlName="turno" required>
-            <option value="Manhã">Manhã</option>
-            <option value="Normal">Normal</option>
-            <option value="Noite">Noite</option>
-        </select>
-    </div>
+        <div class="input_box">
+            <mat-form-field>
+                <mat-label for="">Turno</mat-label>
+                <mat-select id="turno" formControlName="turno" required>
+                    <mat-option value="Manhã">Manhã</mat-option>
+                    <mat-option value="Normal">Normal</mat-option>
+                    <mat-option value="Noite">Noite</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
 
-    <div class="btn-box">
-        <button type="submit" [disabled]="!funcionarioForm.valid">{{ btnAcao }}</button>
-        <button routerLink="">Voltar</button>
-    </div>
-
-</form>
+        <div class="btn-box">
+            <button type="submit" [disabled]="!funcionarioForm.valid" mat-raised-button color="accent">{{ btnAcao }}</button>
+            <button routerLink="" mat-raised-button>Voltar</button>
+        </div>
+    </form>
+</mat-card>
